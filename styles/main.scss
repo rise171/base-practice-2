@@ -1,19 +1,76 @@
-@import "utils/variables";
-@import "utils/color";
-@import "utils/mixins";
+@import "variables";
+@import "color";
+@import "mixins";
 
 body {
     font-family: $font-stack;
-    background-color: $background-color;
+    background: linear-gradient(135deg, $background-color, lighten($background-color, 10%));
     color: $text-color;
 }
 
+.header {
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    i {
+        font-size: 40px;
+        color: $primary-color;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: $secondary-color;
+        font-size: 22px;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
 .btn-custom {
-    background-color: $primary-color;
-    color: #fff;
+    background: $primary-color;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
     @include button-style;
 
     &:hover {
-        background-color: $secondary-color;
+        background: darken($primary-color, 30%);
+        transform: scale(1.05);
+    }
+}
+
+.error-container {
+    text-align: center;
+    margin-top: 100px;
+
+    h1 {
+        font-size: 80px;
+        color: $primary-color;
+    }
+
+    p {
+        font-size: 22px;
     }
 }
