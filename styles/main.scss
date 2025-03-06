@@ -1,0 +1,19 @@
+@import "utils/variables";
+@import "utils/color";
+@import "utils/mixins";
+
+body {
+    font-family: $font-stack;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+.btn-custom {
+    background-color: $primary-color;
+    color: #fff;
+    @include button-style;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
